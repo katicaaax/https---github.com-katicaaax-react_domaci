@@ -28,12 +28,31 @@ function App() {
       amount: 0,
     },
   ]
-  
+  const addToCart = (id) => {
+    products.map((product) => {
+     if(product.id === id){
+         product.amount = product.amount + 1; 
+         console.log("product id=", product.id, "amount=", product.amount);
+     }
+    });
+ };
+ const remFromCart = (id) => {
+  products.map((product) => {
+     if(product.id === id){
+         if(product.amount > 0){
+             product.amount = product.amount - 1;
+             console.log("product id=", product.id, "amount=", product.amount);
+         }else{
+           alert("Amount of product is already 0.");
+        }
+     }
+  });
+ };
   return (
     <div className="App">
 
-      <NavBar />
-      <Products products={products}/>
+      <NavBar  cartNum ={calcCartNum}/>
+      <Products products={products} onAdd={addToCart} onRemove={remFromCart}/>
     </div>
 
 
