@@ -5,6 +5,10 @@ import Products from "./products";
 import { useState } from "react";
 
 
+
+
+
+
 function App() {
   //pravimo niz proizvoda
   const [cartNum, setCartNum] = useState(0);
@@ -28,6 +32,13 @@ function App() {
       title: "Setting Powder",
       description: "Elevate your makeup game with our Setting Powder product, the ultimate finishing touch for a long-lasting and flawless look.",
       imageLink: "https://www.hera.com/int/en/products/__icsFiles/afieldfile/2022/12/22/20220718_final_SOFT-FINISH-LOOSE-POWDER_pdp_detail_img03_pc.jpg",
+      amount: 0,
+    },
+    {
+      id: 4,
+      title: "Concelear",
+      description: "Our Concealer offers full coverage that effectively hides imperfections, dark spots, redness, and uneven skin tone.",
+      imageLink: "https://s.abcnews.com/images/GMA/GMA_AmazonConcealer_081723_V01_GV_1692288671674_hpMain_16x9_992.jpg",
       amount: 0,
     },
   ]);
@@ -55,11 +66,13 @@ function App() {
      }
   });
  };
+
   return (
     
     <div className="App">
      <NavBar  cartNum ={cartNum}/>
       <Products products={products} onAdd={addToCart} onRemove={remFromCart}/>
+       
     </div>
 
 
