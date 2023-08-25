@@ -1,4 +1,6 @@
 import React from "react";
+import {ImCheckboxChecked} from "react-icons/im";
+import {FaMinusSquare} from "react-icons/fa";
 
 const OneProduct = () => {
     //pravimo promenljivu za stilizovanje
@@ -12,8 +14,12 @@ const OneProduct = () => {
             <p className="card-text">
                 Product description where we can read more details about it.
             </p>
-            <a className="btn">+</a>
-            <a className="btn">-</a>
+            <button className="btn">
+                < ImCheckboxChecked />
+            </button>
+            <button className="btn">
+                <FaMinusSquare />
+                </button>
         </div>
     </div>
   );
