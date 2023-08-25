@@ -2,10 +2,13 @@
 import "./App.css";
 import NavBar from "./navBar";
 import Products from "./products";
+import { useState } from "react";
+
 
 function App() {
   //pravimo niz proizvoda
-  const products = [
+  const [cartNum, setCartNum] = useState(0);
+  const [products, setProducts] = useState([
     {
       id: 1,
       title: "Beauty Blender",
@@ -27,11 +30,13 @@ function App() {
       imageLink: "https://www.hera.com/int/en/products/__icsFiles/afieldfile/2022/12/22/20220718_final_SOFT-FINISH-LOOSE-POWDER_pdp_detail_img03_pc.jpg",
       amount: 0,
     },
-  ]
+  ]);
   const addToCart = (id) => {
     products.map((product) => {
      if(product.id === id){
          product.amount = product.amount + 1; 
+         const a = cartNum + 1;
+         setCartNum(a);
          console.log("product id=", product.id, "amount=", product.amount);
      }
     });
@@ -41,6 +46,8 @@ function App() {
      if(product.id === id){
          if(product.amount > 0){
              product.amount = product.amount - 1;
+             const a = cartNum - 1;
+             setCartNum(a);
              console.log("product id=", product.id, "amount=", product.amount);
          }else{
            alert("Amount of product is already 0.");
@@ -49,9 +56,9 @@ function App() {
   });
  };
   return (
+    
     <div className="App">
-
-      <NavBar  cartNum ={calcCartNum}/>
+     <NavBar  cartNum ={cartNum}/>
       <Products products={products} onAdd={addToCart} onRemove={remFromCart}/>
     </div>
 
