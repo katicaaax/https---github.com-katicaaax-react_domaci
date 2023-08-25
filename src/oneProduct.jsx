@@ -2,7 +2,7 @@ import React from "react";
 import {ImCheckboxChecked} from "react-icons/im";
 import {FaMinusSquare} from "react-icons/fa";
 
-const OneProduct = () => {
+const OneProduct = (props) => {
     //pravimo promenljivu za stilizovanje
     const design = {margin: 10, borderStyle: "dashed"};
   return (
@@ -10,10 +10,8 @@ const OneProduct = () => {
     <div className="card" style = {design}> 
         <img className="card-img-top" src="https://picsum.photos/200" alt="Neka slika"/>
         <div className="card-body">
-            <h3 className="card-title">Product name</h3>
-            <p className="card-text">
-                Product description where we can read more details about it.
-            </p>
+            <h3 className="card-title">{props.prodName}</h3>
+            <p className="card-text">{props.prodDesc}</p>
             <button className="btn">
                 < ImCheckboxChecked />
             </button>
@@ -25,4 +23,4 @@ const OneProduct = () => {
   );
 };
 
-export default OneProduct
+export default OneProduct;
