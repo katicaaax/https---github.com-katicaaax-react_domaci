@@ -9,10 +9,9 @@ const Products = ({products}) => {
     const description = "New product description that we got from Product component using props.";
   return (
     <div className="all-products">
-        <OneProduct product={products[0]}/>
-        <OneProduct product={products[1]}/>
-        <OneProduct product={products[2]}/>
-
+        {products.map(product => (
+            <OneProduct product ={product} />
+        ))}
 
     </div>
   );
