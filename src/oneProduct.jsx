@@ -9,7 +9,7 @@ const OneProduct = ({product}) => {
   return (
     //prosledjujemo promenljivu za stilizovanje
     <div className="card" style = {design}> 
-        <img className="card-img-top" src={product.imageLink} alt="Product Photo" style={{ width: '300px', height: '300px' }}/>
+        <img className="card-img-top" src={product.imageLink} alt="Product Photo" style={{ width: '350px', height: '300px' }}/>
         <div className="card-body">
             <h3 className="card-title">{product.title}</h3>
             <p className="card-text">{product.description}</p>

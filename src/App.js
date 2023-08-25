@@ -10,7 +10,7 @@ function App() {
       id: 1,
       title: "Beauty Blender",
       description: "The Beauty Blender is a revolutionary makeup tool designed to effortlessly achieve a flawless and airbrushed finish. ",
-      imageLink: "https://static.beautytocare.com/media/catalog/product/cache/global/image/1300x1300/85e4522595efc69f496374d01ef2bf13/b/e/beautyblender-original_1.jpg",
+      imageLink: "https://www.instyle.com/thmb/GxwIgSz4fZq-O6LcuJ9OqgYprZo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/053023-silicone-sponge-lead-f29ba2a7d2de4638a94f0d808d0ac0b1.jpg",
       amount: 0,
     },
     {
@@ -24,7 +24,7 @@ function App() {
       id: 3,
       title: "Setting Powder",
       description: "Elevate your makeup game with our Setting Powder product, the ultimate finishing touch for a long-lasting and flawless look.",
-      imageLink: "https://focallure.com/cdn/shop/files/focallure-face-setting-powder-01-lvory-32453354619018.jpg?v=1691490268&width=1000",
+      imageLink: "https://www.hera.com/int/en/products/__icsFiles/afieldfile/2022/12/22/20220718_final_SOFT-FINISH-LOOSE-POWDER_pdp_detail_img03_pc.jpg",
       amount: 0,
     },
   ]
