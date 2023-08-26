@@ -5,7 +5,7 @@ import CartProduct from "./cartProducts";
 const Cart = ({cartProducts}) => {
     return (
  <div className="cart-container">
-<h1>This is your cart</h1>
+<h1>Your cart contains the following:</h1>
 {cartProducts.map((product) => (
     <CartProduct key={product.id} product={product} />
 ))}

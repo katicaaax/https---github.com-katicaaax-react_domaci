@@ -14,6 +14,9 @@ import { useState } from "react";
 
 function App() {
   //pravimo niz proizvoda
+  const updateCart = (product) => {
+    setCartProducts([...cartProducts, product]);
+  };
  const [cartProducts, setCartProducts] = useState([]);
  const refreshCart = () => {
 const newProducts = products.filter((product) => product.amount > 0);
@@ -56,7 +59,12 @@ setCartProducts(newProducts);
          product.amount = product.amount + 1; 
          const a = cartNum + 1;
          setCartNum(a);
-         refreshCart();
+         if(product.amount === 1){
+          updateCart(product);
+         }else{
+          refreshCart();
+         }
+        
          console.log("product id=", product.id, "amount=", product.amount);
      }
     });
@@ -82,7 +90,6 @@ setCartProducts(newProducts);
     <BrowserRouter>
     <NavBar cartNum={cartNum}/>
     <MoreInfo moreInfoText="Discover a diverse selection of beauty products at Katy Beauty Shop. Your one-stop destination for achieving perfect skin. Reach out to us for any business inquiries at radosavljevic.katarina98@gmail.com." />
-
     <Routes>
     <Route
       path="/"

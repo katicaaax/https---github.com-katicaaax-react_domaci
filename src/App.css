@@ -124,6 +124,22 @@ a {
   padding-left: 25px;
   font-size: normal;
 }
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #ae7575;
+}
+
+.cart-items {
+  display: flex;
+  align-items: center;
+}
+
+.meet-team-link {
+  margin-right: 20px;
+}
 
 
 body {
