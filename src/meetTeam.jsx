@@ -12,7 +12,7 @@ function MeetTeam() {
         <div className="team-member">
           <img src={teamMember1} alt="Team Member 1" />
           <p className="team-member-name"><strong>Katarina Radosavljevic</strong></p>
-          <p className="team-member-role"><em>CEO</em></p>
+          <p className="team-member-role"><em>CTO</em></p>
         </div>
         <div className="team-member">
           <img src={teamMember2} alt="Team Member 2" />
