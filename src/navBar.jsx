@@ -4,7 +4,7 @@ import {ImCart} from "react-icons/im";
 function navBar({ cartNum }) {
   return (
     <div className="navBar">
-        <a>Make Up Store</a>
+        <a>Katy Beauty Shop</a>
         <a className="cart-items">
             <ImCart style={{marginLeft: 10}} />
             <div className="cart-num">{cartNum}</div>

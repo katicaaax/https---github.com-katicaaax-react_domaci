@@ -3,6 +3,7 @@ import "./App.css";
 import NavBar from "./navBar";
 import Products from "./products";
 import MoreInfo from "./moreInfo";
+import Cart from "./cart";
 import { useState } from "react";
 
 
@@ -74,9 +75,10 @@ function App() {
     <div className="App">
     
      <NavBar  cartNum ={cartNum}/>
-     <MoreInfo moreInfoText="Additional information about the products." />
+     <MoreInfo moreInfoText="
+Discover a diverse selection of beauty products at Katy Beauty Shop. Your one-stop destination for achieving perfect skin. Reach out to us for any business inquiries at radosavljevic.katarina98@gmail.com." />
       <Products products={products} onAdd={addToCart} onRemove={remFromCart}/>
-     
+     <Cart />
       
     </div>
 
