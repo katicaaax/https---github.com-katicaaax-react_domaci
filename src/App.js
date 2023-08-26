@@ -2,6 +2,7 @@
 import "./App.css";
 import NavBar from "./navBar";
 import Products from "./products";
+import MoreInfo from "./moreInfo";
 import { useState } from "react";
 
 
@@ -11,6 +12,7 @@ import { useState } from "react";
 
 function App() {
   //pravimo niz proizvoda
+ 
   const [cartNum, setCartNum] = useState(0);
   const [products, setProducts] = useState([
     {
@@ -70,9 +72,12 @@ function App() {
   return (
     
     <div className="App">
+    
      <NavBar  cartNum ={cartNum}/>
+     <MoreInfo moreInfoText="Additional information about the products." />
       <Products products={products} onAdd={addToCart} onRemove={remFromCart}/>
-       
+     
+      
     </div>
 
 
