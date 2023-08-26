@@ -1,0 +1,50 @@
+
+
+.meet-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+  }
+  
+  .team-title {
+    color: rgb(86, 15, 85);
+    font-size: 30px;
+  }
+  
+  .team-photos {
+    display: flex;
+    justify-content: center;
+    margin-top: -20px;
+  }
+  
+  .team-member {
+    text-align: center;
+  }
+  
+  .team-member img {
+    max-width: 80%;
+    height: auto;
+    max-height: 400px; 
+    margin-bottom: 10px;
+  }
+  
+  .team-member p {
+    margin: 0;
+  }
+  
+  .team-member-name {
+    font-weight: bold;
+  }
+  
+  .team-member-role {
+    font-style: italic;
+  }
+  
+  
+  .meet-team-link {
+    margin-right: 30px;
+  }
+  
+  
