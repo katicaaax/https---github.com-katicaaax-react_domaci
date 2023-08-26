@@ -4,6 +4,7 @@ import NavBar from "./navBar";
 import Products from "./products";
 import MoreInfo from "./moreInfo";
 import Cart from "./cart";
+import MeetTeam from './MeetTeam';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
@@ -103,6 +104,7 @@ setCartProducts(newProducts);
       />
    <Route path="/cart" 
    element={<Cart cartProducts={cartProducts}/>}/>
+<Route path="/meetTeam" element={<MeetTeam />} />
     </Routes>
     </BrowserRouter>
     
