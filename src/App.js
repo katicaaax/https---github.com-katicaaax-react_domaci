@@ -4,6 +4,7 @@ import NavBar from "./navBar";
 import Products from "./products";
 import MoreInfo from "./moreInfo";
 import Cart from "./cart";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
 
@@ -13,7 +14,11 @@ import { useState } from "react";
 
 function App() {
   //pravimo niz proizvoda
- 
+ const [cartProducts, setCartProducts] = useState([]);
+ const refreshCart = () => {
+const newProducts = products.filter((product) => product.amount > 0);
+setCartProducts(newProducts);
+ };
   const [cartNum, setCartNum] = useState(0);
   const [products, setProducts] = useState([
     {
@@ -51,6 +56,7 @@ function App() {
          product.amount = product.amount + 1; 
          const a = cartNum + 1;
          setCartNum(a);
+         refreshCart();
          console.log("product id=", product.id, "amount=", product.amount);
      }
     });
@@ -62,6 +68,7 @@ function App() {
              product.amount = product.amount - 1;
              const a = cartNum - 1;
              setCartNum(a);
+             refreshCart();
              console.log("product id=", product.id, "amount=", product.amount);
          }else{
            alert("Amount of product is already 0.");
@@ -72,20 +79,29 @@ function App() {
 
   return (
     
-    <div className="App">
+    <BrowserRouter>
+    <NavBar cartNum={cartNum}/>
+    <MoreInfo moreInfoText="Discover a diverse selection of beauty products at Katy Beauty Shop. Your one-stop destination for achieving perfect skin. Reach out to us for any business inquiries at radosavljevic.katarina98@gmail.com." />
+
+    <Routes>
+    <Route
+      path="/"
+      element={
+        <Products
+        products={products}
+        onAdd={addToCart}
+        onRemove={remFromCart}
+      />
+      }
+      />
+   <Route path="/cart" 
+   element={<Cart cartProducts={cartProducts}/>}/>
+    </Routes>
+    </BrowserRouter>
     
-     <NavBar  cartNum ={cartNum}/>
-     <MoreInfo moreInfoText="
-Discover a diverse selection of beauty products at Katy Beauty Shop. Your one-stop destination for achieving perfect skin. Reach out to us for any business inquiries at radosavljevic.katarina98@gmail.com." />
-      <Products products={products} onAdd={addToCart} onRemove={remFromCart}/>
-     <Cart />
-      
-    </div>
-
-
-
 
   );
 }
 
 export default App;
+
