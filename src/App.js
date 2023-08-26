@@ -6,6 +6,7 @@ import MoreInfo from "./moreInfo";
 import Cart from "./cart";
 import MeetTeam from './MeetTeam';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { RiDeleteBin6Line } from 'react-icons/ri';
 import { useState } from "react";
 
 
@@ -14,6 +15,15 @@ import { useState } from "react";
 
 
 function App() {
+  const emptyCart = () => {
+    setCartProducts([]);
+    setCartNum(0);
+    const updatedProducts = products.map((product) => ({
+      ...product,
+      amount: 0,
+    }));
+    setProducts(updatedProducts);
+  };
   //pravimo niz proizvoda
   const updateCart = (product) => {
     setCartProducts([...cartProducts, product]);
@@ -89,7 +99,8 @@ setCartProducts(newProducts);
   return (
     
     <BrowserRouter>
-    <NavBar cartNum={cartNum}/>
+    <NavBar cartNum={cartNum} onEmptyCart={emptyCart}/>
+
     <MoreInfo moreInfoText="Discover a diverse selection of beauty products at Katy Beauty Shop. Your one-stop destination for achieving perfect skin. Reach out to us for any business inquiries at radosavljevic.katarina98@gmail.com." />
     <Routes>
     <Route
